@@ -12,21 +12,6 @@ export interface OtpInputProps {
   hideStick?: boolean;
   focusStickBlinkingDuration?: number;
   secureTextEntry?: boolean;
-  theme?: Theme;
-  disabled?: boolean;
-  textInputProps?: TextInputProps;
-  textProps?: TextProps;
-  type?: "alpha" | "numeric" | "alphanumeric";
-  placeholder?: string;
-}
-
-export interface OtpInputRef {
-  clear: () => void;
-  focus: () => void;
-  setValue: (value: string) => void;
-}
-
-export interface Theme {
   containerStyle?: ViewStyle;
   /**
    * @deprecated Use `containerStyle` instead
@@ -38,5 +23,15 @@ export interface Theme {
   focusStickStyle?: ViewStyle;
   focusedPinCodeContainerStyle?: ViewStyle;
   disabledPinCodeContainerStyle?: ViewStyle;
-  placeholderTextStyle?: TextStyle;
+  placeholderTextStyle?: TextStyle;  disabled?: boolean;
+  textInputProps?: TextInputProps;
+  textProps?: TextProps;
+  type?: "alpha" | "numeric" | "alphanumeric";
+  placeholder?: string;
+}
+
+export interface OtpInputRef {
+  clear: () => void;
+  focus: () => void;
+  setValue: (value: string) => void;
 }

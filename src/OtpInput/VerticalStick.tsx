@@ -10,7 +10,7 @@ interface VerticalStickProps {
 }
 
 export const VerticalStick: React.FC<VerticalStickProps> = memo(
-  ({ focusColor, style, focusStickBlinkingDuration = 350 }) => {
+  ({ focusColor, style, focusStickBlinkingDuration = 350, ...props }) => {
     const opacityAnim = useRef(new Animated.Value(1)).current;
 
     useEffect(() => {
@@ -38,6 +38,7 @@ export const VerticalStick: React.FC<VerticalStickProps> = memo(
         <View
           style={[styles.stick, focusColor ? { backgroundColor: focusColor } : {}, style]}
           testID="otp-input-stick"
+          {...props}
         />
       </Animated.View>
     );

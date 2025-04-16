@@ -20,12 +20,9 @@ export const OtpInput = forwardRef<OtpInputRef, OtpInputProps>((props, ref) => {
     focusColor = "#A4D0A4",
     focusStickBlinkingDuration,
     secureTextEntry = false,
-    theme = {},
     textInputProps,
     textProps,
     type = "numeric",
-  } = props;
-  const {
     containerStyle,
     inputsContainerStyle,
     pinCodeContainerStyle,
@@ -35,7 +32,7 @@ export const OtpInput = forwardRef<OtpInputRef, OtpInputProps>((props, ref) => {
     filledPinCodeContainerStyle,
     disabledPinCodeContainerStyle,
     placeholderTextStyle,
-  } = theme;
+  } = props;
 
   useImperativeHandle(ref, () => ({ clear, focus, setValue: setTextWithRef }));
 
